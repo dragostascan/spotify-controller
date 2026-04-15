@@ -1,0 +1,5 @@
+opencv-python==4.13.0.92
+mediapipe==0.10.5
+numpy==2.4.3
+spotipy==2.26.0
+python-dotenv==1.0.1
