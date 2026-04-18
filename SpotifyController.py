@@ -152,14 +152,13 @@ while True:
                     cv2.circle(img, (cx, cy), 10, (0, 255, 0), cv2.FILLED)
 
                 # Increased threshold from 3 to 5 to ignore tiny twitches, 
-                # and added the volume_cooldown check
                 if abs(last_vol - vol_percent) > 5 and volume_cooldown == 0:
                     try:
                         sp.volume(int(vol_percent))
                         last_vol = vol_percent
                         volume_cooldown = 15  # Wait ~0.5 seconds (15 frames) before sending the next API call
                     except Exception as e:
-                        pass  # Ignorăm eroarea ca să nu blocheze video-ul
+                        pass 
 
                 cv2.putText(img, "VOLUME MODE: ON", (10, 50),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
@@ -167,10 +166,10 @@ while True:
                 cv2.putText(img, "VOLUME MODE: OFF", (10, 50),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
-    # UI pentru bara de volum
+    # UI for volume bar
     cv2.rectangle(img, (50, 150), (85, 400), (255, 0, 0), 3)
     cv2.rectangle(img, (50, int(vol_bar)), (85, 400), (255, 0, 0), cv2.FILLED)
-    cv2.putText(img, f'{int(vol_percent)} %', (40, 350),
+    cv2.putText(img, f'{int(vol_percent)} %', (40, 450),
                 cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
 
     cv2.imshow("Spotify Controller", img)
