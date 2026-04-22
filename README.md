@@ -186,9 +186,3 @@ The interface shows:
 The full Romanian-language project documentation is included in this repository as:
 
 - `Spotify Controller.docx`
-
-## GitHub Repository
-
-Source code and documentation are available in this repository:
-
-`https://github.com/dragostascan/spotify-controller`
